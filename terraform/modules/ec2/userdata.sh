@@ -1,6 +1,8 @@
 #!/bin/bash
 
-dnf install -y docker
+yum update -y
+
+yum install -y docker aws-cli
 
 systemctl enable docker
 systemctl start docker
