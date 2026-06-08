@@ -80,6 +80,7 @@ jobs:
           terraform plan \
             -var="image_tag=${{ needs.build.outputs.image_tag }}" \
             -var="ecr_registry=${{ needs.build.outputs.ecr_registry }}" \
+            -var="public_key=${{ secrets.EC2_PUBLIC_KEY }}" \
             -out=tfplan
       - name: Save plan artifact
         uses: actions/upload-artifact@v4
