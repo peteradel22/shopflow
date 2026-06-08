@@ -157,4 +157,3 @@ jobs:
             sleep 10
           done
           echo "Smoke test failed" && exit 1
-ENDOFFILE
