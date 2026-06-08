@@ -31,7 +31,6 @@ resource "aws_security_group" "ec2_sg" {
   name   = "shopflow-ec2-sg"
   vpc_id = var.vpc_id
 
-  # ALB forwards to port 3000 on EC2
   ingress {
     from_port       = 3000
     to_port         = 3000
@@ -96,7 +95,7 @@ resource "aws_lb" "alb" {
 # TARGET GROUP
 ####################################
 resource "aws_lb_target_group" "tg" {
-  name     = "shopflow-tg"
+  name     = "shopflow-tg-v2"
   port     = 3000
   protocol = "HTTP"
   vpc_id   = var.vpc_id
@@ -110,6 +109,10 @@ resource "aws_lb_target_group" "tg" {
     interval            = 30
     timeout             = 5
     matcher             = "200"
+  }
+
+  lifecycle {
+    create_before_destroy = true
   }
 }
 
