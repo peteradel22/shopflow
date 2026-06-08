@@ -1,6 +1,14 @@
-variable "vpc_id" {}
+variable "public_key" {
+  description = "SSH public key for EC2 key pair"
+  type        = string
+}
 
-variable "public_subnet_ids" {}
-variable "private_subnet_ids" {}
+variable "image_tag" {
+  description = "Docker image tag"
+  type        = string
+}
 
-variable "instance_profile_name" {}
+variable "ecr_registry" {
+  description = "ECR registry URL"
+  type        = string
+}
