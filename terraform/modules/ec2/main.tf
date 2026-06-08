@@ -60,7 +60,7 @@ resource "aws_security_group" "ec2_sg" {
 
 resource "aws_key_pair" "shopflow" {
   key_name   = "shopflow-key"
-  public_key = file("~/.ssh/id_rsa.pub")
+  public_key = var.public_key
 }
 
 ####################################
