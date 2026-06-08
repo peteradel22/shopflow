@@ -1,3 +1,8 @@
+variable "aws_region" {
+  description = "AWS region"
+  type        = string
+  default     = "us-east-1"
+}
 variable "public_key" {
   description = "SSH public key for EC2 key pair"
   type        = string
