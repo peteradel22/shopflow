@@ -23,3 +23,6 @@ module "rds" {
   private_subnet_ids = module.vpc.private_subnet_ids
   ec2_sg_id          = module.ec2.ec2_sg_id
 }
+output "alb_dns_name" {
+  value = module.ec2.alb_dns_name
+}
